@@ -38,7 +38,7 @@ export const getListUser = ({
 export const getUserById = (id: string) =>
   UserProxy.post({
     requestConfig: {
-      url: '/user/getInfo',
+      url: '/api/user/getInfo',
       params: {
         userId: id,
       },
