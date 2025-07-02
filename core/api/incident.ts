@@ -155,7 +155,7 @@ export const deleteListIncident = ({
 }) => 
   IncidentProxy.post({
     requestConfig: {
-      url: `api/incident/delete`,
+      url: `/api/incident/delete`,
       params: {
         ids: ids
       },
