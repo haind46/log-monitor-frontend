@@ -56,7 +56,7 @@ type CreatedSystem = {
 export const createNewSystem = (createdSystem: CreatedSystem) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/systems/create`,
+      url: `/api/systems/create`,
       data: {
         ...createdSystem,
       },
