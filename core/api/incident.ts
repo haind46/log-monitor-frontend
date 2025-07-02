@@ -137,7 +137,7 @@ export const deleteListDepartment = ({
 }) => {
   UserProxy.post({
     requestConfig: {
-      url: `api/department/delete`,
+      url: `/api/department/delete`,
       params: {
         ids: ids
       },
