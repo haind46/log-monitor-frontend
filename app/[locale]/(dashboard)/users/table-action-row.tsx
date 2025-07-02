@@ -39,7 +39,7 @@ export function DataTableRowActions<TData>({
     mutationFn: deleteListUser,
     onSuccess(response) {
       console.log("data=", response)
-      if (data?.statusCode === 400) {
+      if (response?.data?.statusCode === 400) {
         toast({
           title: t("users.form.errorTitle"),
           description: t("users.form.errorTitleDescription"),
