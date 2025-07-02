@@ -91,7 +91,7 @@ export type Incident = {
 export const createIncident = (incidentData: Incident) =>
   IncidentProxy.post({
     requestConfig: {
-      url: `api/incident/create`,
+      url: `/api/incident/create`,
       data: {
         ...incidentData,
       },
