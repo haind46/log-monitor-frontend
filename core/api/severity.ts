@@ -74,7 +74,7 @@ export const updatedSeverity = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/severity-config/edit?id=${id}`,
+      url: `/api/severity-config/edit?id=${id}`,
       data: {
         ...configData,
       },
