@@ -40,7 +40,7 @@ export function DataTableRowActions<TData>({
 
   const deleteMutation = useMutation({
     mutationFn: deleteListSystemCrLog,
-    onSuccess(data) {
+    onSuccess(response) {
       toast({
         title: t("form.success"),
       });

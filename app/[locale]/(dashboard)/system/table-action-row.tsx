@@ -53,7 +53,7 @@ export function DataTableRowActions<TData>({
 
   const deleteMutation = useMutation({
     mutationFn: deleteListSystem,
-    onSuccess(data) {
+    onSuccess(response) {
       if (response?.data?.message === "6002") {
         toast({
           title: t("users.form.errorTitle"),

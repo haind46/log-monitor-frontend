@@ -40,7 +40,7 @@ export function DataTableRowActions<TData>({
 
   const deleteMutation = useMutation({
     mutationFn: deleteListIncident,
-    onSuccess(data) {
+    onSuccess(response) {
       toast({
         title: t("form.success") || "Success",
       });
