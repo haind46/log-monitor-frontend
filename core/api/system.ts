@@ -89,7 +89,7 @@ export const deleteListSystem = ({
 }) => 
   UserProxy.post({
     requestConfig: {
-      url: `api/systems/delete`,
+      url: `/api/systems/delete`,
       params: {
         ids: ids
       },
