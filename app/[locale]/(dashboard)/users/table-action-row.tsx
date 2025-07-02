@@ -38,7 +38,7 @@ export function DataTableRowActions<TData>({
   const deleteMutation = useMutation({
     mutationFn: deleteListUser,
     onSuccess(response) {
-      console.log('data=',data)
+      console.log("data=", response)
       if (data?.statusCode === 400) {
         toast({
           title: t("users.form.errorTitle"),
