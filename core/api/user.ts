@@ -101,7 +101,7 @@ export const deleteListUser = ({
 }) => 
   UserProxy.post({
     requestConfig: {
-      url: `api/users/delete`,
+      url: `/api/users/delete`,
       params: {
         ids: ids
       },
