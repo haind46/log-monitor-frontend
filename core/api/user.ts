@@ -86,7 +86,7 @@ export const updateUser = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/users/edit?id=${id}`,
+      url: `/api/users/edit?id=${id}`,
       data: {
         ...updatedUser,
       },
