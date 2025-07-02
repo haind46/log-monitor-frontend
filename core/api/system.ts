@@ -1,6 +1,8 @@
-import ProxyBase from '../proxy-base'
+// import ProxyBase from '../proxy-base'
+// const UserProxy = new ProxyBase()
 
-const UserProxy = new ProxyBase()
+import { InternalProxyBase } from '../proxy-base'
+const UserProxy = new InternalProxyBase()
 
 type getSystem = {
   page?: number
@@ -38,7 +40,8 @@ export const getList = ({
 export const getUserById = (id: string) =>
   UserProxy.post({
     requestConfig: {
-      url: '/user/getInfo',
+      // url: '/user/getInfo',
+      url: '/api/user/getInfo',
       params: {
         userId: id,
       },
@@ -56,7 +59,8 @@ type CreatedSystem = {
 export const createNewSystem = (createdSystem: CreatedSystem) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/systems/create`,
+      // url: `api/systems/create`,
+      url: `/api/systems/create`,
       data: {
         ...createdSystem,
       },
@@ -74,7 +78,8 @@ export const updateSystem = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/systems/edit?id=${id}`,
+      // url: `api/systems/edit?id=${id}`,
+      url: `/api/systems/edit?id=${id}`,
       data: {
         ...updatedSystem,
       },
@@ -89,7 +94,8 @@ export const deleteListSystem = ({
 }) => 
   UserProxy.post({
     requestConfig: {
-      url: `api/systems/delete`,
+      // url: `api/systems/delete`,
+      url: `/api/systems/delete`,
       params: {
         ids: ids
       },

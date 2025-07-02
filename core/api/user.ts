@@ -1,6 +1,9 @@
-import ProxyBase from '../proxy-base'
+// import ProxyBase from '../proxy-base'
+// const UserProxy = new ProxyBase()
 
-const UserProxy = new ProxyBase()
+import { InternalProxyBase } from '../proxy-base'
+const UserProxy = new InternalProxyBase()
+
 
 type GetUserType = {
   page?: number
@@ -10,6 +13,29 @@ type GetUserType = {
   sortKey?: string
   sortDir?: string
 }
+
+// export const getListUser = ({
+//   page,
+//   size,
+//   keyword,
+//   status,
+//   sortKey,
+//   sortDir,
+// }: GetUserType) => {
+//   return UserProxy.get({
+//     requestConfig: {
+//       url: '/api/users',
+//       params: {
+//         page: page ?? '',
+//         limit: size ?? '',
+//         keyWord: keyword ?? '',
+//         status: status ?? 2,
+//         sort_key: sortKey ?? '',
+//         sort_dir: sortDir ?? '',
+//       },
+//     },
+//   });
+// };
 
 export const getListUser = ({
   page,
@@ -38,7 +64,8 @@ export const getListUser = ({
 export const getUserById = (id: string) =>
   UserProxy.post({
     requestConfig: {
-      url: '/user/getInfo',
+      // url: '/user/getInfo',
+      url: '/api/user/getInfo',
       params: {
         userId: id,
       },
@@ -59,7 +86,8 @@ type CreatedUser = {
 export const createNewUser = (createdUser: CreatedUser) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/users/create`,
+      // url: `api/users/create`,
+      url: `/api/users/create`,
       data: {
         ...createdUser,
       },
@@ -86,7 +114,8 @@ export const updateUser = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/users/edit?id=${id}`,
+      // url: `api/users/edit?id=${id}`,
+      url: `/api/users/edit?id=${id}`,
       data: {
         ...updatedUser,
       },
@@ -101,7 +130,8 @@ export const deleteListUser = ({
 }) => 
   UserProxy.post({
     requestConfig: {
-      url: `api/users/delete`,
+      // url: `api/users/delete`,
+      url: `/api/users/delete`,
       params: {
         ids: ids
       },

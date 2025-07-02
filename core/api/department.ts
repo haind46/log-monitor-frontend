@@ -1,6 +1,8 @@
-import ProxyBase from '../proxy-base'
+// import ProxyBase from '../proxy-base'
+// const UserProxy = new ProxyBase()
 
-const UserProxy = new ProxyBase()
+import { InternalProxyBase } from '../proxy-base'
+const UserProxy = new InternalProxyBase()
 
 type getConfig = {
   page?: number
@@ -38,7 +40,8 @@ export const getList = ({
 export const getUserById = (id: string) =>
   UserProxy.post({
     requestConfig: {
-      url: '/user/getInfo',
+      // url: '/user/getInfo',
+       url: '/api/user/getInfo',
       params: {
         userId: id,
       },
@@ -54,7 +57,8 @@ type Department = {
 export const createDepartment = (departmentData: Department) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/department/create`,
+      // url: `api/department/create`,
+      url: `/api/department/create`,
       data: {
         ...departmentData,
       },
@@ -72,7 +76,8 @@ export const updateDepartment = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/department/edit?id=${id}`,
+      // url: `api/department/edit?id=${id}`,
+      url: `/api/department/edit?id=${id}`,
       data: {
         ...configData,
       },
@@ -87,7 +92,8 @@ export const deleteListDepartment = ({
 }) => 
   UserProxy.post({
     requestConfig: {
-      url: `api/department/delete`,
+      // url: `api/department/delete`,
+      url: `/api/department/delete`,
       params: {
         ids: ids
       },

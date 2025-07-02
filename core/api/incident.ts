@@ -1,7 +1,12 @@
-import ProxyBase from '../proxy-base'
+// import ProxyBase from '../proxy-base'
 
-const UserProxy = new ProxyBase()
-const IncidentProxy = new ProxyBase()
+// const UserProxy = new ProxyBase()
+// const IncidentProxy = new ProxyBase()
+
+import { InternalProxyBase } from '../proxy-base'
+
+const UserProxy = new InternalProxyBase()
+const IncidentProxy = new InternalProxyBase()
 
 type getConfig = {
   page?: number
@@ -38,7 +43,8 @@ export const getIncidentList = ({
 export const getUserById = (id: string) =>
   UserProxy.post({
     requestConfig: {
-      url: '/user/getInfo',
+      // url: '/user/getInfo',
+      url: '/api/user/getInfo',
       params: {
         userId: id,
       },
@@ -48,7 +54,8 @@ export const getUserById = (id: string) =>
 export const getIncidentById = (id: string) =>
   IncidentProxy.post({
     requestConfig: {
-      url: '/incident/getInfo',
+      // url: '/incident/getInfo',
+      url: '/api/incident/getInfo',
       params: {
         incidentId: id,
       },
@@ -64,7 +71,8 @@ type Department = {
 export const createDepartment = (departmentData: Department) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/department/create`,
+      // url: `api/department/create`,
+      url: `/api/department/create`,
       data: {
         ...departmentData,
       },
@@ -91,7 +99,8 @@ export type Incident = {
 export const createIncident = (incidentData: Incident) =>
   IncidentProxy.post({
     requestConfig: {
-      url: `api/incident/create`,
+      // url: `api/incident/create`,
+      url: `/api/incident/create`,
       data: {
         ...incidentData,
       },
@@ -107,7 +116,8 @@ export const updateDepartment = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/department/edit?id=${id}`,
+      // url: `api/department/edit?id=${id}`,
+      url: `/api/department/edit?id=${id}`,
       data: {
         ...configData,
       },
@@ -123,7 +133,8 @@ export const updateIncident = ({
 }) =>
   IncidentProxy.post({
     requestConfig: {
-      url: `api/incident/edit?id=${id}`,
+      // url: `api/incident/edit?id=${id}`,
+      url: `/api/incident/edit?id=${id}`,
       data: {
         ...configData,
       },
@@ -137,7 +148,8 @@ export const deleteListDepartment = ({
 }) => {
   UserProxy.post({
     requestConfig: {
-      url: `api/department/delete`,
+      // url: `api/department/delete`,
+      url: `/api/department/delete`,
       params: {
         ids: ids
       },
@@ -155,7 +167,8 @@ export const deleteListIncident = ({
 }) => 
   IncidentProxy.post({
     requestConfig: {
-      url: `api/incident/delete`,
+      // url: `api/incident/delete`,
+      url: `/api/incident/delete`,
       params: {
         ids: ids
       },

@@ -1,6 +1,7 @@
-import ProxyBase from '../proxy-base'
-
-const UserProxy = new ProxyBase()
+// import ProxyBase from '../proxy-base'
+// const UserProxy = new ProxyBase()
+import { InternalProxyBase } from '../proxy-base'
+const UserProxy = new InternalProxyBase()
 
 type getConfig = {
   page?: number
@@ -38,7 +39,8 @@ export const getList = ({
 export const getUserById = (id: string) =>
   UserProxy.post({
     requestConfig: {
-      url: '/user/getInfo',
+      // url: '/user/getInfo',
+      url: '/api/user/getInfo',
       params: {
         userId: id,
       },
@@ -56,7 +58,8 @@ type Severity = {
 export const createSeverity = (severityData: Severity) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/severity-config/create`,
+      // url: `api/severity-config/create`,
+      url: `/api/severity-config/create`,
       data: {
         ...severityData,
       },
@@ -74,7 +77,8 @@ export const updatedSeverity = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/severity-config/edit?id=${id}`,
+      // url: `api/severity-config/edit?id=${id}`,
+      url: `/api/severity-config/edit?id=${id}`,
       data: {
         ...configData,
       },
@@ -89,7 +93,8 @@ export const deleteListSeverity = ({
 }) => 
   UserProxy.post({
     requestConfig: {
-      url: `api/severity-config/delete`,
+      // url: `api/severity-config/delete`,
+      url: `/api/severity-config/delete`,
       params: {
         ids: ids
       },
