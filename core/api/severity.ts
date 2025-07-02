@@ -89,7 +89,7 @@ export const deleteListSeverity = ({
 }) => 
   UserProxy.post({
     requestConfig: {
-      url: `api/severity-config/delete`,
+      url: `/api/severity-config/delete`,
       params: {
         ids: ids
       },
