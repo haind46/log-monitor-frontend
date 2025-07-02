@@ -74,7 +74,7 @@ export const updateSystem = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/systems/edit?id=${id}`,
+      url: `/api/systems/edit?id=${id}`,
       data: {
         ...updatedSystem,
       },
