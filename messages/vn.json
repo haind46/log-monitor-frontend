@@ -1,0 +1,408 @@
+{
+  "title": {
+    "userManagement": "Quản lý Người dùng",
+    "officerList": "Quản lý Danh sách Cán bộ",
+    "department": "Quản lý Đơn vị",
+    "settings": "Cấu hình Cảnh báo",
+    "systemLog": "Danh mục Hệ thống",
+    "severity": "Quản lý Mức độ Cảnh báo",
+    "accessLog": "Tra cứu log truy cập",
+    "workflow": "Quản lý Quy trình VHKT",
+    "incident": "Quản lý Sự cố",
+    "logCR": "Log tác động theo CR",
+    "eventLookup": "Tra cứu log/event",
+    "reportCountingAlarm": "Báo cáo số lượng cảnh báo",
+    "reportReceiveCallAlarm": "Thống kê nghe điện thoại"
+  },
+  "Sidebar": {
+    "groups": {
+      "systemAdmin": "Quản trị hệ thống",
+      "accessControl": "Quản lý truy cập",
+      "systemConfig": "Cấu hình hệ thống",
+      "alarmEvent": "Quản lý sự kiện và cảnh báo",
+      "report": "Báo cáo thống kê"
+    },
+    "items": {
+      "userManagement": "Quản lý Người dùng",
+      "officerList": "Quản lý Danh sách Cán bộ",
+      "department": "Quản lý Đơn vị",
+      "settings": "Cấu hình Cảnh báo",
+      "systemLog": "Danh mục Hệ thống",
+      "severity": "Quản lý Mức độ Cảnh báo",
+      "accessLog": "Tra cứu log truy cập",
+      "workflow": "Quản lý Quy trình VHKT",
+      "incident": "Quản lý Sự cố",
+      "logCR": "Log tác động theo CR",
+      "eventLookup": "Tra cứu log/event",
+      "reportCountingAlarm": "Báo cáo số lượng cảnh báo",
+      "reportReceiveCallAlarm": "Thống kê nghe điện thoại"
+    }
+  },
+  "global": {
+    "system": "Hệ thống",
+    "name-system": "Trợ lý trực ảo AI",
+    "create": "Thêm mới",
+    "edit": "Chỉnh sửa",
+    "filter": "Nhấn Enter để tìm kiếm",
+    "active": "Hoạt động",
+    "disabled": "Không hoạt động",
+    "save": "Lưu",
+    "saveChange": "Lưu thay đổi",
+    "delete": "Xóa",
+    "form": {
+      "errorTitle": "Thao tác lỗi"
+    }
+  },
+  "users": {
+    "email": "Tên đăng nhập",
+    "sign-in": "Đăng nhập ",
+    "filter": "Lọc",
+    "addUser": "Người dùng",
+    "manageUser": "Quản lý người dùng",
+    "table": {
+      "addUser": "Thêm mới",
+      "edit": "Chỉnh sửa",
+      "delete": "Xóa",
+      "detailTitle": "Xem chi tiết",
+      "fullname": "Tên cán bộ",
+      "email": "E-mail",
+      "department": "Đơn vị",
+      "phone": "Số điện thoại",
+      "userCode": "Mã cán bộ",
+      "userNote": "Ghi chú",
+      "createdAt": "Ngày tạo",
+      "functionTitle": "Chức năng",
+      "confirmTitle": "Bạn có chắc muốn xóa người dùng này",
+      "confirmDescription": "Xóa dữ liệu người dùng"
+    },
+    "form": {
+      "idUser": "ID",
+      "username": "Tên đăng nhập",
+      "fullname": "Họ và tên",
+      "status": "Trạng thái",
+      "phone": "Số điện thoại",
+      "department": "Đơn vị",
+      "note": "Ghi chú",
+      "createAt": "Ngày tạo",
+      "editUser": "Chỉnh sửa người dùng",
+      "editUserDescription": "Thực hiện thay đổi người dùng ở đây. Nhấp vào lưu khi bạn hoàn tất.",
+      "userView": "Chi tiết người dùng",
+      "userDescription": "Xem thông tin chi tiết người dùng.",
+      "title": "Nhập người dùng ở đây. Nhấn lưu khi hoàn thành",
+      "createUser": "Tạo người dùng",
+      "createUserDescription": "Thực hiện tạo người dùng ở đây. Nhấp vào lưu khi bạn hoàn tất.",
+      "email": "E-mail",
+      "name": "Tên",
+      "password": "Mật khẩu",
+      "confirmPassword": "Nhập lại mật khẩu",
+      "saveChange": "Lưu thay đổi",
+      "success": "Thao tác thành công",
+      "addNewSuccess": "Thêm mới thông tin người dùng thành công",
+      "updateSuccess": "Cập nhật thông tin người dùng thành công",
+      "errorTitle": "Thao tác lỗi",
+      "errorTitleDescription": "Không thể xóa người dùng",
+      "delete": "XÓA NGƯỜI DÙNG",
+      "deleteTitle": "Bạn có chắc chắn muốn xóa người dùng "
+    }
+  },
+
+  "system": {
+    "email": "Username",
+    "sign-in": "Login",
+    "filter": "Filter",
+    "addUser": "User",
+    "manageUser": "Users Management",
+    "table": {
+      "addUser": "Add User",
+      "edit": "Edit",
+      "delete": "Delete",
+      "codeSystem": "Mã hệ thống",
+      "nameSystem": "Tên hệ thống",
+      "level1": "Cán bộ cấp 1",
+      "level2": "Cán bộ cấp 2",
+      "level3": "Cán bộ cấp 3",
+      "createdAt": "Ngày tạo",
+      "functionTitle": "Chức năng",
+      "confirmTitle": "Bạn có chắc muốn xóa người dùng này",
+      "confirmDescription": "Xóa dữ liệu người dùng"
+    },
+    "form": {
+      "idUser": "ID",
+      "createAt": "Ngày tạo",
+      "edit": "Chỉnh sửa hệ thống",
+      "editDescription": "Thực hiện thay đổi hệ thống ở đây. Nhấp vào lưu khi bạn hoàn tất.",
+      "userView": "Chi tiết người dùng",
+      "userDescription": "Xem thông tin chi tiết người dùng.",
+      "title": "Nhập người dùng ở đây. Nhấn lưu khi hoàn thành",
+      "create": "Tạo mới hệ thống",
+      "createDescription": "Thực hiện tạo hệ thống ở đây. Nhấp vào lưu khi bạn hoàn tất.",
+      "email": "E-mail",
+      "name": "Tên",
+      "password": "Mật khẩu",
+      "confirmPassword": "Nhập lại mật khẩu",
+      "saveChange": "Lưu thay đổi",
+      "success": "Thao tác thành công",
+      "addNewSuccess": "Thêm mới thông tin người dùng thành công",
+      "updateSuccess": "Cập nhật thông tin người dùng thành công",
+      "errorTitle": "Thao tác lỗi",
+      "delete": "XÓA HỆ THỐNG",
+      "deleteTitle": "Bạn có chắc chắn muốn xóa hệ thống ",
+      "mutipleDelete": "Bạn có chắc chắn muốn xóa hệ thống?",
+      "mutipleDeleteTitle": "hệ thống đã được chọn"
+    }
+  },
+  "config": {
+    "email": "Username",
+    "sign-in": "Login",
+    "filter": "Filter",
+    "addUser": "User",
+    "manageUser": "Users Management",
+    "table": {
+      "addUser": "Add User",
+      "edit": "Edit",
+      "delete": "Delete",
+      "keyName": "Mã cấu hình",
+      "value": "Giá trị",
+      "description": "Thông tin mô tả",
+      "createdAt": "Ngày tạo",
+      "functionTitle": "Chức năng",
+      "confirmTitle": "Bạn có chắc muốn xóa người dùng này",
+      "confirmDescription": "Xóa dữ liệu người dùng"
+    },
+    "form": {
+      "edit": "Chỉnh sửa cấu hình",
+      "editDescription": "Thực hiện thay đổi cấu hình ở đây. Nhấp vào lưu khi bạn hoàn tất.",
+      "userView": "Chi tiết người dùng",
+      "userDescription": "Xem thông tin chi tiết người dùng.",
+      "title": "Nhập người dùng ở đây. Nhấn lưu khi hoàn thành",
+      "create": "Tạo mới cấu hình cảnh báo",
+      "createDescription": "Thực hiện tạo cấu hình mới ở đây. Nhấp vào lưu khi bạn hoàn tất.",
+      "saveChange": "Lưu thay đổi",
+      "success": "Thao tác thành công",
+      "addNewSuccess": "Thêm mới thông tin cấu hình thành công",
+      "updateSuccess": "Cập nhật thông tin cấu hình thành công",
+      "errorTitle": "Thao tác lỗi",
+      "delete": "XÓA CẤU HÌNH",
+      "deleteTitle": "Bạn có chắc chắn muốn xóa cấu hình ",
+      "mutipleDelete": "Bạn có chắc chắn muốn xóa cấu hình?",
+      "mutipleDeleteTitle": "cấu hình đã được chọn"
+    }
+  },
+  "department": {
+    "table": {
+      "name": "Tên phòng ban",
+      "code": "Mã phòng ban",
+      "description": "Mô tả",
+      "createdAt": "Ngày tạo",
+      "functionTitle": "Chức năng",
+      "add": "Thêm phòng ban"
+    },
+    "form": {
+      "edit": "Chỉnh sửa cấu hình",
+      "editDescription": "Thay đổi thông tin phòng ban tại đây. Nhấn lưu khi bạn hoàn tất.",
+      "userDescription": "Xem thông tin chi tiết của người dùng mục tiêu.",
+      "create": "Tạo phòng ban mới",
+      "createDescription": "Tạo phòng ban của bạn tại đây. Nhấn lưu khi bạn hoàn tất.",
+      "saveChange": "Lưu thay đổi",
+      "title": "Điền thông tin người dùng tại đây. Nhấn lưu khi bạn hoàn tất.",
+      "success": "Thành công",
+      "addNewSuccess": "Thêm thông tin phòng ban mới thành công",
+      "updateSuccess": "Cập nhật thông tin phòng ban thành công",
+      "errorTitle": "Lỗi",
+      "delete": "XÓA CẤU HÌNH",
+      "deleteTitle": "Bạn có chắc chắn muốn xóa phòng ban ",
+      "mutipleDelete": "Bạn có chắc chắn muốn xóa phòng ban?",
+      "mutipleDeleteTitle": "phòng ban đã được chọn"
+    }
+  },
+  "severity": {
+    "table": {
+      "name": "Severity Config",
+      "severityLevel": "Mức độ cảnh báo",
+      "description": "Mô tả",
+      "notifyToLevel": "Thông báo tới cấp",
+      "autoCall": "Tự động gọi",
+      "ttsTemplate": "Mẫu TSS",
+      "createdAt": "Ngày tạo",
+      "functionTitle": "Chức năng",
+      "add": "Thêm mức độ cảnh báo"
+    },
+    "form": {
+      "edit": "Chỉnh sửa mức độ cảnh báo",
+      "editDescription": "Thay đổi thông tin mức độ cảnh báo tại đây. Nhấn lưu khi bạn hoàn tất.",
+      "create": "Tạo mức độ cảnh báo mới",
+      "createDescription": "Tạo mức độ cảnh báo tại đây. Nhấn lưu khi bạn hoàn tất.",
+      "saveChange": "Lưu thay đổi",
+      "title": "Điền thông tin mức độ cảnh báo tại đây. Nhấn lưu khi bạn hoàn tất.",
+      "success": "Thành công",
+      "addNewSuccess": "Thêm mới mức độ cảnh báo thành công",
+      "updateSuccess": "Cập nhật mức độ cảnh báo thành công",
+      "errorTitle": "Lỗi",
+      "delete": "XÓA MỨC ĐỘ CẢNH BÁO",
+      "deleteTitle": "Bạn có chắc chắn muốn xóa mức độ cảnh báo ",
+      "mutipleDelete": "Bạn có chắc chắn muốn xóa mức độ cảnh báo?",
+      "mutipleDeleteTitle": "mức độ cảnh báo đã được chọn"
+    }
+  },
+  "system-cr-log": {
+    "main-nav": {
+      "manageConfig": "Quản lý CR Log"
+    },
+    "table": {
+      "add": "Thêm mới",
+      "startTime": "Thời gian bắt đầu",
+      "endTime": "Thời gian kết thúc",
+      "scope": "Phạm vi",
+      "impactedSystem": "Phạm vi tác động",
+      "implementUnit": "Đơn vị thực hiện",
+      "implementer": "Người thực hiện",
+      "approver": "Người phê duyệt",
+      "status": "Trạng thái",
+      "procedureFile": "File quy trình",
+      "description": "Mô tả",
+      "note": "Ghi chú",
+      "sourceSystem": "Hệ thống tác động",
+      "relatedSystems": "Hệ thống liên quan",
+      "functionTitle": "Chức năng"
+    },
+    "form": {
+      "success": "Thành công",
+      "delete": "Xóa",
+      "deleteTitle": "Bạn có chắc muốn xóa bản ghi này?",
+      "edit": "Chỉnh sửa",
+      "detailTitle": "Chi tiết",
+      "mutipleDelete": "Xóa nhiều",
+      "mutipleDeleteTitle": "Bạn có chắc muốn xóa các bản ghi đã chọn?",
+      "create": "Tạo mới CR Log",
+      "createDescription": "Nhập thông tin để tạo mới bản ghi CR Log.",
+      "addNewSuccess": "Tạo mới thành công!",
+      "updateSuccess": "Cập nhật thành công!",
+      "errorTitle": "Có lỗi xảy ra",
+      "relatedSystemsPlaceholder": "Nhập các hệ thống liên quan, cách nhau bởi dấu phẩy",
+      "impactedSystemAll": "Toàn hệ thống",
+      "impactedSystemModule": "Phân hệ",
+      "impactedSystemService": "Dịch vụ",
+      "editDescription": "Cập nhật thông tin CR Log tại đây."
+    }
+  },
+  "incident": {
+    "main-nav": {
+      "manageIncident": "Quản lý sự cố"
+    },
+    "table": {
+      "incidentCode": "Mã sự cố",
+      "title": "Tiêu đề",
+      "description": "Mô tả",
+      "incidentTime": "Thời gian phát sinh",
+      "resolvedTime": "Thời gian xử lý",
+      "status": "Trạng thái",
+      "severity": "Mức độ",
+      "sourceSystem": "Hệ thống nguồn",
+      "detectedBy": "Phát hiện bởi",
+      "assignedTo": "Người xử lý",
+      "solution": "Giải pháp",
+      "relatedProcedure": "Quy trình liên quan",
+      "suggestion": "Đề xuất",
+      "functionTitle": "Chức năng",
+      "pagination": "Hiển thị {start}-{end} trên tổng số {total} mục",
+      "noData": "Không có dữ liệu",
+      "add": "Thêm sự cố"
+    },
+    "form": {
+      "addNewSuccess": "Thêm sự cố thành công",
+      "errorTitle": "Lỗi",
+      "create": "Tạo sự cố",
+      "createDescription": "Điền thông tin để tạo mới sự cố.",
+      "statusOpen": "Mở",
+      "statusInProgress": "Đang xử lý",
+      "statusResolved": "Đã xử lý",
+      "statusClosed": "Đã đóng",
+      "severityCritical": "Nghiêm trọng",
+      "severityHigh": "Cao",
+      "severityMedium": "Trung bình",
+      "severityLow": "Thấp",
+      "success": "Thành công",
+      "error": "Lỗi",
+      "edit": "Chỉnh sửa",
+      "delete": "Xóa",
+      "deleteTitle": "Bạn có chắc chắn muốn xóa",
+      "mutipleDelete": "Xóa các mục đã chọn",
+      "mutipleDeleteTitle": "Bạn có chắc chắn muốn xóa các sự cố này không?",
+      "editDescription": "Thay đổi thông tin mức độ cảnh báo tại đây. Nhấn lưu khi bạn hoàn tất.",
+      "updateSuccess": "Cập nhật thông tin sự cố thành công"
+    }
+  },
+  "log-entry": {
+    "table": {
+      "severity": "Mức độ",
+      "occurredAt": "Thời gian xảy ra",
+      "alarmDate": "Thời gian cảnh báo",
+      "ancestry": "Chuỗi cha",
+      "systemName": "Tên hệ thống",
+      "hostName": "Tên máy chủ",
+      "hostIp": "IP máy chủ",
+      "resourceName": "Tên tài nguyên",
+      "target": "Đích",
+      "resourceType": "Loại tài nguyên",
+      "alarmName": "Tên cảnh báo",
+      "conditionLog": "Điều kiện log",
+      "eventType": "Loại sự kiện",
+      "eventSource": "Nguồn sự kiện",
+      "eventDetail": "Chi tiết sự kiện",
+      "errorType": "Loại lỗi",
+      "translatedDetail": "Chi tiết dịch",
+      "analyzedBy": "Phân tích bởi",
+      "createdAt": "Ngày tạo",
+      "updatedAt": "Ngày cập nhật",
+      "functionTitle": "Chức năng",
+      "advancedSearch": "Tìm kiếm nâng cao",
+      "occurredAtFrom": "Thời gian xảy ra (Từ)",
+      "occurredAtTo": "Thời gian xảy ra (Đến)"
+    },
+    "main-nav": {
+      "logEntry": "Nhật ký sự kiện"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Thay đổi ngôn ngữ",
+    "locale": "{locale, select, vn {Tiếng Việt} en {English} other {Unknown}}"
+  },
+  "main-nav": {
+    "label": "Đặc trưng",
+    "roles": "Vai trò",
+    "users": "Người dùng",
+    "manageUser": "Quản lý người dùng",
+    "manageSystem": "Quản lý hệ thống",
+    "manageConfig": "Cấu hình cảnh báo",
+    "manageIncident": "Quản lý sự cố",
+    "logEntry": "Nhật ký sự kiện"
+  },
+  "user-nav": {
+    "profile": "Hồ sơ",
+    "logOut": "Đăng xuât"
+  },
+  "mode-toggle": {
+    "themeToggle": "Chuyển chủ đề",
+    "lightTheme": "Sáng",
+    "darkTheme": "Tối"
+  },
+  "sign-in": {
+    "aboutUs": "Về chúng tôi",
+    "sign-in": "Đăng nhập",
+    "register": "Đăng ký",
+    "email": "E-mail",
+    "password": "Mật khẩu",
+    "rememberPassword": "Nhớ mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "orLogin": "Hoặc đăng nhập với",
+    "notAccount": "Bạn chưa có tài khoản?",
+    "anAccount": "Bạn đã có tài khoản?",
+    "warning": "Tên đăng nhập hoặc mật khẩu không đúng!",
+    "errorTitle": "Tên đăng nhập hoặc mật khẩu không đúng!"
+  },
+  "UnderConstruction": {
+    "title": "Tính năng đang phát triển!",
+    "description": "Chức năng này hiện đang được phát triển và sẽ sớm ra mắt. Vui lòng quay lại sau hoặc liên hệ quản trị hệ thống nếu cần hỗ trợ thêm.",
+    "back": "Quay lại trang chủ"
+  }
+}
