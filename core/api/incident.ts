@@ -48,7 +48,7 @@ export const getUserById = (id: string) =>
 export const getIncidentById = (id: string) =>
   IncidentProxy.post({
     requestConfig: {
-      url: '/incident/getInfo',
+      url: '/api/incident/getInfo',
       params: {
         incidentId: id,
       },
