@@ -64,7 +64,7 @@ type Department = {
 export const createDepartment = (departmentData: Department) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/department/create`,
+      url: `/api/department/create`,
       data: {
         ...departmentData,
       },
