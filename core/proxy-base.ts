@@ -42,9 +42,6 @@ export class InternalProxyBase {
     
     const res = await fetch(url, {
       method: 'GET',
-      headers: {
-        ...(requestConfig.headers || {}),
-      },
     })
     
     if (!res.ok) {
@@ -62,7 +59,6 @@ export class InternalProxyBase {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(requestConfig.headers || {}),
       },
       body: requestConfig.data ? JSON.stringify(requestConfig.data) : undefined,
     })
@@ -82,7 +78,6 @@ export class InternalProxyBase {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        ...(requestConfig.headers || {}),
       },
       body: requestConfig.data ? JSON.stringify(requestConfig.data) : undefined,
     })
@@ -100,9 +95,6 @@ export class InternalProxyBase {
     
     const res = await fetch(url, {
       method: 'DELETE',
-      headers: {
-        ...(requestConfig.headers || {}),
-      },
     })
     
     if (!res.ok) {
