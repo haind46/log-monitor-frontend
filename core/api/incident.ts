@@ -123,7 +123,7 @@ export const updateIncident = ({
 }) =>
   IncidentProxy.post({
     requestConfig: {
-      url: `api/incident/edit?id=${id}`,
+      url: `/api/incident/edit?id=${id}`,
       data: {
         ...configData,
       },
