@@ -38,11 +38,12 @@ export default class ProxyBase {
 // New InternalProxyBase for Next.js API routes
 export class InternalProxyBase {
   async get({ requestConfig, outputSchema }: GetMethod) {
-    const res = await fetch(requestConfig.url + (requestConfig.params ? '?' + new URLSearchParams(requestConfig.params).toString() : ''), {
+    const url = requestConfig.url + (requestConfig.params ? '?' + new URLSearchParams(requestConfig.params).toString() : '')
+    
+    const res = await fetch(url, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        ...requestConfig.headers,
+        ...(requestConfig.headers || {}),
       },
     })
     
@@ -61,7 +62,7 @@ export class InternalProxyBase {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...requestConfig.headers,
+        ...(requestConfig.headers || {}),
       },
       body: requestConfig.data ? JSON.stringify(requestConfig.data) : undefined,
     })
@@ -81,7 +82,7 @@ export class InternalProxyBase {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        ...requestConfig.headers,
+        ...(requestConfig.headers || {}),
       },
       body: requestConfig.data ? JSON.stringify(requestConfig.data) : undefined,
     })
@@ -100,8 +101,7 @@ export class InternalProxyBase {
     const res = await fetch(url, {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
-        ...requestConfig.headers,
+        ...(requestConfig.headers || {}),
       },
     })
     
