@@ -56,7 +56,7 @@ type Severity = {
 export const createSeverity = (severityData: Severity) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/severity-config/create`,
+      url: `/api/severity-config/create`,
       data: {
         ...severityData,
       },
