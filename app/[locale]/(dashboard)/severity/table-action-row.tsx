@@ -45,7 +45,7 @@ export function DataTableRowActions<TData>({
   const deleteMutation = useMutation({
     mutationFn: deleteListSeverity,
     onSuccess(response: { data?: { message?: string } }) {
-      if (data?.message === "6002") {
+      if (response?.data?.message === "6002") {
       toast({
         title: t("form.errorTitle"),
       });
