@@ -72,7 +72,7 @@ export const updateDepartment = ({
 }) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/department/edit?id=${id}`,
+      url: `/api/department/edit?id=${id}`,
       data: {
         ...configData,
       },
