@@ -59,7 +59,7 @@ type CreatedUser = {
 export const createNewUser = (createdUser: CreatedUser) =>
   UserProxy.post({
     requestConfig: {
-      url: `api/users/create`,
+      url: `/api/users/create`,
       data: {
         ...createdUser,
       },
