@@ -1,6 +1,6 @@
-import ProxyBase from '../proxy-base'
+import { InternalProxyBase } from '../proxy-base'
 
-const UserProxy = new ProxyBase()
+const UserProxy = new InternalProxyBase()
 
 type getConfig = {
   page?: number
