@@ -10,20 +10,18 @@ export async function GET(request: NextRequest) {
     }
 
     const { searchParams } = new URL(request.url);
-    const page = searchParams.get("page") || "";
-    const limit = searchParams.get("limit") || "";
+    const page = searchParams.get("page") || "1";
+    const limit = searchParams.get("limit") || "10";
     const keyword = searchParams.get("keyword") || "";
-    const status = searchParams.get("status") || "2";
-    const sort_key = searchParams.get("sort_key") || "";
-    const sort_dir = searchParams.get("sort_dir") || "";
+    const sort_dir = searchParams.get("sort_dir") || "desc";
+    const sort_key = searchParams.get("sort_key") || "incident_time";
 
     const params = new URLSearchParams({
       page,
       limit,
       keyword,
-      status,
-      sort_key,
       sort_dir,
+      sort_key,
     });
 
     const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/incident?${params}`, {

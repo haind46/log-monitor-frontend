@@ -35,6 +35,7 @@ import { getList } from "~/core/api/department";
 import { useState, useEffect } from "react";
 import { Icons } from "~/components/icons";
 import { useQuery } from "@tanstack/react-query";
+import { getSession} from 'next-auth/react'
 
 const CreateFormSchema = z
   .object({
@@ -103,7 +104,7 @@ export default function FormCreateUser() {
     error,
     isFetching,
   } = useQuery({
-    queryKey: ["getList"],
+    queryKey: ["getListDepartment"],
     queryFn: () =>
       getList({
         page: 1,
@@ -114,6 +115,36 @@ export default function FormCreateUser() {
         sortDir: "desc",
       }),
   });
+  
+  // const current = useStore((store) => store.page);
+  // const pageSize = useStore((store) => store.pageSize);
+  // const selectedUserIds = useStore((store) => store.selectedUserIds);
+  // const searchKeyword = useStore((store) => store.searchKeyword);
+
+  // const { 
+  //   data: departments, 
+  //   isLoading, 
+  //   error, 
+  //   isFetching 
+  // } = useQuery({
+  //   queryKey: ['getListDepartment', current, pageSize, searchKeyword],
+  //   queryFn: async () => {
+  //     const session = await getSession();
+  //     const token = session?.access_token;
+      
+  //     const res = await fetch(
+  //       `/api/department?page=${current}&limit=${pageSize}&keyWord=${encodeURIComponent(searchKeyword ?? "")}&sort_key=id&sort_dir=desc`,
+  //       {
+  //         method: "GET",
+  //         headers: { "Content-Type": "application/json",
+  //               ...(token ? { Authorization: `Bearer ${token}` } : {}),
+  //         }
+  //       }
+  //     );
+  //     return res.json();
+  //   },
+  //   enabled: !!current,
+  // });
 
   const onSubmit = form.handleSubmit(
     async (data: z.infer<typeof CreateFormSchema>) => {
@@ -305,13 +336,17 @@ export default function FormCreateUser() {
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
-                    {(departments?.data.data || []).map((dept: any) => (
-                      <SelectItem key={dept.id} value={dept.id}>
-                        {dept.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
+                  {Array.isArray(departments?.data?.data) ? (
+                    <SelectContent>
+                      {departments.data.data.map((dept: any) => (
+                        <SelectItem key={dept.id} value={dept.id}>
+                          {dept.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  ) : (
+                    <div>Không có đơn vị</div>
+                  )}
                 </Select>
               </FormControl>
               <FormMessage />

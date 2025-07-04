@@ -10,22 +10,21 @@ export async function POST(request: NextRequest) {
     }
 
     const { searchParams } = new URL(request.url);
-    const idsParam = searchParams.getAll("ids");
+    const id = searchParams.get("id");
     
-    if (!idsParam || idsParam.length === 0) {
-      return NextResponse.json({ error: "User IDs are required" }, { status: 400 });
+    if (!id) {
+      return NextResponse.json({ error: "Config ID is required" }, { status: 400 });
     }
 
-    // Build query params for backend
-    const params = new URLSearchParams();
-    idsParam.forEach(id => params.append("ids", id));
+    const configData = await request.json();
 
-    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/users/delete?${params}`, {
+    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/config/edit?id=${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${session.access_token}`,
       },
+      body: JSON.stringify(configData),
     });
 
     if (!response.ok) {
@@ -35,7 +34,7 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
-    console.error("Delete users API error:", error);
+    console.error("Update config API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

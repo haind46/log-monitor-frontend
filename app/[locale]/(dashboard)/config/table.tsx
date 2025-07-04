@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { getList } from '~/core/api/waring-config'
 import { useQuery } from '@tanstack/react-query'
 import { DataTableRowActions } from './table-action-row'
+import { getSession, signIn, signOut } from 'next-auth/react'
 
 const Table = dynamic(() => import("antd/es/table"), { ssr: false });
 
@@ -16,17 +17,24 @@ export default function SystemTable() {
   const searchKeyword = useStore((store) => store.searchKeyword);
 
   const { data: response, isLoading, error, isFetching } = useQuery({
-    queryKey: ['getListConfig',searchKeyword],
-    queryFn: () =>
-      getList({
-        page: current,
-        size: pageSize,
-        keyword: searchKeyword,
-        status : 1,
-        sortKey:'id',
-        sortDir:'desc'
-      }),
-  })
+    queryKey: ['getListConfig', searchKeyword],
+    queryFn: async () => {
+            // Lấy session để lấy token
+      const session = await getSession();
+      const token = session?.access_token;
+      
+      const res = await fetch(
+        `/api/config?page=${current}&limit=${pageSize}&keyWord=${encodeURIComponent(searchKeyword ?? "")}&sort_key=id&sort_dir=desc`,
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json",
+                ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          }
+        }
+      );
+      return res.json();
+    },
+  });
  
   const t = useTranslations("config");
 
@@ -62,7 +70,8 @@ export default function SystemTable() {
       bordered
       rowKey="id"
       loading={isLoading || isFetching}
-      dataSource={response?.data.data}
+      // dataSource={response?.data.data}
+      dataSource={Array.isArray(response?.data?.data) ? response.data.data : []}
       columns={columns}
       rowSelection={{
         selectedRowKeys: selectedUserIds,

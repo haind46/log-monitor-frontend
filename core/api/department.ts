@@ -13,7 +13,30 @@ type getConfig = {
   sortDir?: string
 }
 
-export const getList = ({
+// export const getList = ({
+//   page,
+//   size,
+//   keyword,
+//   status,
+//   sortKey,
+//   sortDir,
+// }: getConfig) => {
+//   return UserProxy.get({
+//     requestConfig: {
+//       url: '/api/department',
+//       params: {
+//         page: page ?? '',
+//         limit: size ?? '',
+//         keyWord: keyword ?? '',
+//         status: status ?? 2,
+//         sort_key: sortKey ?? '',
+//         sort_dir: sortDir ?? '',
+//       },
+//     },
+//   });
+// };
+
+export const getList = async ({
   page,
   size,
   keyword,
@@ -21,21 +44,33 @@ export const getList = ({
   sortKey,
   sortDir,
 }: getConfig) => {
-  return UserProxy.get({
-    requestConfig: {
-      url: '/api/department',
-      params: {
-        page: page ?? '',
-        limit: size ?? '',
-        keyWord: keyword ?? '',
-        status: status ?? 2,
-        sort_key: sortKey ?? '',
-        sort_dir: sortDir ?? '',
-      },
+  const params = new URLSearchParams({
+    page: String(page ?? 1),
+    limit: String(size ?? 10),
+    keyWord: keyword ?? "",
+    status: String(status ?? 1),
+    sort_key: sortKey ?? "id",
+    sort_dir: sortDir ?? "desc",
+  });
+
+  const url = `/api/department?${params.toString()}`;
+
+  console.log("🌐 [getList] Gọi API:", url);
+
+  const res = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
     },
   });
-};
 
+  if (!res.ok) {
+    console.error("❌ [getList] Lỗi API /api/department", res.status);
+    throw new Error("Lỗi khi lấy danh sách đơn vị");
+  }
+
+  return res.json();
+};
 
 export const getUserById = (id: string) =>
   UserProxy.post({

@@ -74,7 +74,8 @@ export default function SystemTable() {
       bordered
       rowKey="id"
       loading={isLoading || isFetching}
-      dataSource={response?.data.data}
+      // dataSource={response?.data.data}
+      dataSource={Array.isArray(response?.data?.data) ? response.data.data : []}
       columns={columns}
       rowSelection={{
         selectedRowKeys: selectedUserIds,

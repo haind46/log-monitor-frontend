@@ -29,7 +29,9 @@ export function DataTableRowActions<TData>({
 }: DataTableRowActionsProps<TData>) {
   const t = useTranslations();
   const queryClient = useQueryClient();
+
   const rowData = FormSchema.parse(row);
+
   const { setMode, setIsOpenSheet, setEditUserGroupData } = useStore(
     (state) => state
   );

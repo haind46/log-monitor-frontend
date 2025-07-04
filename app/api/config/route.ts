@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/authOptions";
 import { getToken } from "next-auth/jwt";
 
 export async function GET(req: NextRequest) {
@@ -20,9 +18,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Missing EXTERNAL_BACKEND_URL" }, { status: 500 });
   }
 
-  const backendUrl = `${BASE_URL}/api/department?page=${page}&limit=${limit}&keyWord=${keyWord}&sort_dir=${sortDir}&sort_key=${sortKey}`;
-  // console.log("🌐 Đang gọi API backend:", backendUrl);
-  // console.log("🔑 access_token:", token.access_token ?? "(null)");
+  const backendUrl = `${BASE_URL}/api/config?page=${page}&limit=${limit}&keyWord=${keyWord}&sort_dir=${sortDir}&sort_key=${sortKey}`;
 
   try {
     const res = await fetch(backendUrl, {
@@ -45,7 +41,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(data);
   } catch (err) {
-    console.error("💥 Lỗi gọi fetch tới backend:", err);
+    // console.error("💥 Lỗi gọi fetch tới backend:", err);
     return NextResponse.json({ error: "Unexpected error" }, { status: 500 });
   }
 }

@@ -15,8 +15,8 @@ export const FormSchema = z.object({
     .nullable(),
   userNote: z.string().optional().nullable(),
   status: z.number(),
-  password: z.string().min(8, "Mật khẩu của bạn quá yếu"),
-  // confirmPassword: z.string().min(8, "Mật khẩu của bạn quá yếu"),
+  password: z.string().optional().nullable(), // ✅ sửa chỗ này,
+  confirmPassword: z.string().optional().nullable(),
 });
 
 export type User = z.infer<typeof FormSchema>;

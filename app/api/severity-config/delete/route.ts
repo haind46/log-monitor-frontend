@@ -10,13 +10,17 @@ export async function POST(request: NextRequest) {
     }
 
     const { searchParams } = new URL(request.url);
-    const ids = searchParams.get("ids");
+    const idsParam = searchParams.getAll("ids");
     
-    if (!ids) {
+    if (!idsParam || idsParam.length === 0) {
       return NextResponse.json({ error: "Severity config IDs are required" }, { status: 400 });
     }
 
-    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/severity-config/delete?ids=${ids}`, {
+    // Build query params for backend
+    const params = new URLSearchParams();
+    idsParam.forEach(id => params.append("ids", id));
+
+    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/severity-config/delete?${params}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

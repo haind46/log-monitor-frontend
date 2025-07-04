@@ -9,23 +9,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { searchParams } = new URL(request.url);
-    const idsParam = searchParams.getAll("ids");
-    
-    if (!idsParam || idsParam.length === 0) {
-      return NextResponse.json({ error: "User IDs are required" }, { status: 400 });
-    }
+    const systemCrLogData = await request.json();
 
-    // Build query params for backend
-    const params = new URLSearchParams();
-    idsParam.forEach(id => params.append("ids", id));
-
-    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/users/delete?${params}`, {
+    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/system-cr-log/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${session.access_token}`,
       },
+      body: JSON.stringify(systemCrLogData),
     });
 
     if (!response.ok) {
@@ -35,7 +27,7 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
-    console.error("Delete users API error:", error);
+    console.error("Create system CR log API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

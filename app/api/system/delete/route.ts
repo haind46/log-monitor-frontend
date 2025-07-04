@@ -13,14 +13,14 @@ export async function POST(request: NextRequest) {
     const idsParam = searchParams.getAll("ids");
     
     if (!idsParam || idsParam.length === 0) {
-      return NextResponse.json({ error: "User IDs are required" }, { status: 400 });
+      return NextResponse.json({ error: "System IDs are required" }, { status: 400 });
     }
 
     // Build query params for backend
     const params = new URLSearchParams();
     idsParam.forEach(id => params.append("ids", id));
 
-    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/users/delete?${params}`, {
+    const response = await fetch(`${process.env.EXTERNAL_BACKEND_URL}/api/systems/delete?${params}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
     return NextResponse.json(data);
   } catch (error) {
-    console.error("Delete users API error:", error);
+    console.error("Delete systems API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

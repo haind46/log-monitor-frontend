@@ -47,7 +47,7 @@ export const getListUser = ({
 }: GetUserType) => {
   return UserProxy.get({
     requestConfig: {
-      url: '/api/users',
+      url: '/api/user',
       params: {
         page: page ?? '',
         limit: size ?? '',
@@ -87,7 +87,7 @@ export const createNewUser = (createdUser: CreatedUser) =>
   UserProxy.post({
     requestConfig: {
       // url: `api/users/create`,
-      url: `/api/users/create`,
+      url: `/api/user/create`,
       data: {
         ...createdUser,
       },
@@ -115,7 +115,7 @@ export const updateUser = ({
   UserProxy.post({
     requestConfig: {
       // url: `api/users/edit?id=${id}`,
-      url: `/api/users/edit?id=${id}`,
+      url: `/api/user/edit?id=${id}`,
       data: {
         ...updatedUser,
       },
@@ -131,7 +131,7 @@ export const deleteListUser = ({
   UserProxy.post({
     requestConfig: {
       // url: `api/users/delete`,
-      url: `/api/users/delete`,
+      url: `/api/user/delete`,
       params: {
         ids: ids
       },
